@@ -182,8 +182,3 @@ def analyze_behavior(transaction: dict, market_data: dict):
             send_feedback_to_nestjs(portafolio_id, msg_panic, "BEHAVIORAL_NUDGE")
 
 
-# --- Fin de la Lógica ---
-
-if __name__ == "__main__":
-    import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8000)
