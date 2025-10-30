@@ -1,6 +1,8 @@
 from fastapi import FastAPI
 import requests
 import logging
+import os
+
 
 app = FastAPI()
 
@@ -8,7 +10,7 @@ app = FastAPI()
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-NESTJS_FEEDBACK_URL = "http://localhost:3000/feedback"
+NESTJS_FEEDBACK_URL = os.environ.get("NESTJS_FEEDBACK_URL", "http://localhost:3000/feedback")
 SIMULATED_FEE_RATE = 0.005  # 0.5% de comisión por transacción
 SLIPPAGE_TOLERANCE = 0.001 # 0.1% de tolerancia al deslizamiento
 
