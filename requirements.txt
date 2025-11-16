@@ -1,3 +1,8 @@
 fastapi
-requests
 uvicorn[standard]
+requests
+numpy
+yfinance
+pandas
+stable-baselines3[extra]
+pydantic
