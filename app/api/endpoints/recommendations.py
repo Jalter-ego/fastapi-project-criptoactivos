@@ -42,9 +42,9 @@ async def get_recommendation(asset_id: str, state: PredictionState):
 
         action, _ = model.predict(obs_vector, deterministic=True)
         
-        if action == 1:
+        if action == 1 and state.balance > 0:
             recommendation = "BUY"
-        elif action == 2:
+        elif action == 2 and state.crypto_held > 0:
             recommendation = "SELL"
         else:
             recommendation = "HOLD"
