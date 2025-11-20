@@ -32,9 +32,12 @@ WORKDIR /app
 # Copiar código de la aplicación
 COPY . .
 
+# Dar permisos de ejecución al script de inicio
+RUN chmod +x start.sh
+
 # Exponer puerto (App Runner usa PORT, default 8000)
 ENV PORT=8000
 EXPOSE $PORT
 
 # Comando para ejecutar la aplicación
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["./start.sh"]
